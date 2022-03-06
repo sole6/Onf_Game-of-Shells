@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Container, Card } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
+
+import Game from "./pages/Game";
+import { Settings } from "./data/ShellSettings";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const GenerateShellData = () => {
+		let xAxisInit = 0;
+		return new Array(Settings.NumberOfShells).fill().map(() => {
+			xAxisInit = xAxisInit + 200;
+			return {
+				id: uuidv4(),
+				xAxis: `${xAxisInit}`,
+				yAxis: 100,
+				showBall: false,
+			};
+		});
+	};
+	return (
+		<Container className="mt-4">
+			<Card>
+				<Card.Header>Game of shells</Card.Header>
+			</Card>
+			<Game
+				shellData={GenerateShellData()}
+				difficulty={Settings.NumberOfShells}
+			/>
+		</Container>
+	);
 }
 
 export default App;
