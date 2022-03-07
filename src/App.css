@@ -1,54 +1,37 @@
 .shell-container {
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	transition: transform 200ms;
-	will-change: transform;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  transition: transform 200ms;
+  will-change: transform;
 }
 .shell {
-	width: 100px;
-	position: absolute;
-	border-top: 150px solid #d2c3b9;
-	border-radius: 54px;
+  width: 100px;
+  position: absolute;
+  border-top: 150px solid #d2c3b9;
+  border-radius: 54px;
 }
 
 .ball {
-	top: 40px;
-	left: 28px;
-	width: 45px;
-	height: 45px;
-	background: #dae0dd;
-	border-radius: 100%;
-	position: absolute;
-	opacity: 0;
+  top: 40px;
+  left: 28px;
+  width: 45px;
+  height: 45px;
+  background: #dae0dd;
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0;
 }
 .ball-init {
-	animation: fadeinout 250ms linear forwards;
+  animation: fadeinout 250ms linear forwards;
 }
 
 @keyframes fadeinout {
-	0%,
-	100% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-}
-
-.ball-final {
-	animation: fadein 1s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes fadein {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-h1 {
-	margin-bottom: 40px;
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
